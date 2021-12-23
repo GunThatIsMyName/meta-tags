@@ -1,51 +1,36 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import CodeExample from "./CodeExample";
+import CodePreview from "./CodePreview";
 
 function InfoExample() {
 
     const [first,setFirst]=useState("This is Title of the website");
-    const [second,setSecond]=useState("this is Title also");
-    const [third,setThird]=useState("descript of this website / awesome in one line");
+    const [second,setSecond]=useState("https://junsjourney.site");
+    const [third,setThird]=useState("descript of this website / awesome in one lineescript of this website / awesome in one lineescript of this website / awesome in one lineescript of this website / awesome in one line");
 
 
-  return (
-    <CodeExample className="code__examples">
-      <div className="code__example">
-        <pre className="code__line">
-
-          {/* ✅ first line of example */}
-          <span className="code-tag">{`< `}<span className="code-name">title</span>{` >`}</span>
-            {first}
-          <span className="code-tag">{`</ `}<span className="code-name">title</span>{` >`}</span>
-          <br />
-
-          {/* ✅  second Line of example */}
-          <span className="code-tag">{`< `}<span className="code-name">meta</span></span>
-             name="title" content="{second}"
-          <span className="code-tag">{`  />`}</span>
-          <br />
-
-          {/* ✅  last Line of example */}
-          <span className="code-tag">{`< `}<span className="code-name">meta</span></span>
-          <span> name="description" </span>
-            <span>content=</span>
-            "{third}"
-            <span className="code-tag">{`/>`}</span>
-
-
-        </pre>
-      </div>
-      <div className="info__example__preview"></div>
-    </CodeExample>
-  );
+    return(
+        <InfoWrapper>
+            <CodeExample first={first} third={third} />
+            <CodePreview first={first} second={second} third={third} />
+        </InfoWrapper>
+    )
 }
 
-const CodeExample = styled.div`
-  .code-tag {
-    font-size: 1.1rem;
-    color: grey;
-    letter-spacing: 2px;
-  }
+const InfoWrapper = styled.article`
+    background-color:var(--color-white);
+    width:1000px;
+    margin:auto;
+    padding:1rem;
+    border:2px solid var(--color-black);
+    border-radius:3px;
+
+    @media screen and (max-width:1024px){
+        width:90%;
+    }
 `;
+
+
 
 export default InfoExample;

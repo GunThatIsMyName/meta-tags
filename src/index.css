@@ -1,4 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+
+:root{
+  --color-grey:#23373E;
+  --color-pink:#F45165;
+  --color-green:#45E6A1;
+  --color-yellow:#EEB600;
+  --color-white:#fff;
+  --color-lightgrey:#5F6981;
+
+  --color-black:#222;
+
+  --goo-blue:#1a0dab;
+  --goo-green:#006621;
+  --goo-grey:#545454;
+
+  --max-width:1200px;
+
+
+  /* font */
+
+  --font-roboto: 'Roboto', sans-serif;
+  --font-lato: 'Lato', sans-serif;
+  --font-nanum: 'Nanum Gothic', sans-serif;
+}
 
 
 html, body, div, span, applet, object, iframe,
@@ -21,6 +48,10 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
+*{
+  box-sizing: border-box;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -29,9 +60,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
   margin: 0;
-  background-color: var(--color-grey);
+  background-color: var(--color-black);
   color: var(--color-white);
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-lato);
 }
 ol, ul, li {
 	list-style: none;
@@ -48,14 +79,12 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-
-
-:root{
-  --color-grey:#23373E;
-  --color-pink:#F45165;
-  --color-green:#45E6A1;
-  --color-yellow:#FCEB3D;
-  --color-white:#fff;
-
-  --max-width:1200px;
+button{
+  outline-width: 0;
+  border:none;
+  cursor: pointer;
 }
+input{
+  border: none;
+}
+
