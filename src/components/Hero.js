@@ -35,7 +35,7 @@ const Wrapper = styled.section`
     margin-bottom:2rem;
     .hero__title{
       font-size:3rem;
-      color:var(--color-pink);
+      color:var(--color-yellow);
       font-family: var(--font-roboto);
       text-align:center;
     }

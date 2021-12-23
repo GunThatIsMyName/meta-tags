@@ -16,11 +16,10 @@ const Wrapper = styled.div`
     min-height:60vh;
     display:flex;
     .main__meta{
-        flex-basis:40%;
-        background-color:red;
+        flex-basis:30%;
     }
     .main__preview{
-        flex-basis:60%;
+        flex-basis:70%;
         background-color:teal;
     }
 `;

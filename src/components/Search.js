@@ -35,7 +35,7 @@ margin-bottom:2rem;
     }
     .form__btn {
       width: 3rem;
-      background-color: var(--color-pink);
+      background-color: var(--color-yellow);
       color: var(--color-white);
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
