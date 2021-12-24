@@ -25,12 +25,6 @@ function Main() {
         return item;
       }
     });
-
-    one.map(item=>{
-        
-    })
-
-    console.log(one)
     setNewData(one);
   };
 

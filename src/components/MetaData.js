@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FaQuestion } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
 
 function MetaData({newData}) {
   const { hello } = useAppContext();
+
+  const [cooper,setCooper]=useState({});
+
+
+  // 데이터 받아오기
+  newData.map(item=>{
+  })
+
+
+
   return (
     <Wrapper className="main__meta">
       <h1 className="metadata">metadata</h1>
