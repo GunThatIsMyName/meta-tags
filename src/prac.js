@@ -4,96 +4,62 @@ export const prac = [
     },
     {
         "name": "viewport",
-        "content": "width=device-width, initial-scale=1"
+        "content": "width=device-width, initial-scale=1, viewport-fit=cover"
     },
     {
-        "nes": "",
-        "name": "keywords",
-        "content": "nike"
+        "property": "analytics-track",
+        "content": "Apple - Index/Tab"
     },
     {
-        "nes": "",
-        "name": "robots",
-        "content": "index, follow"
+        "property": "analytics-s-channel",
+        "content": "homepage"
     },
     {
-        "nes": "",
-        "name": "description",
-        "content": "Nike delivers innovative products, experiences and services to inspire athletes."
+        "property": "analytics-s-bucket-0",
+        "content": "applestoreww"
     },
     {
-        "nes": "",
-        "http-equiv": "content-language",
-        "content": "en-US"
+        "property": "analytics-s-bucket-1",
+        "content": "applestoreww"
     },
     {
-        "nes": "",
-        "name": "application-name",
-        "content": "Nike.com"
+        "property": "analytics-s-bucket-2",
+        "content": "applestoreww"
     },
     {
-        "nes": "",
+        "name": "Description",
+        "content": "Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment, and expert device support."
+    },
+    {
         "property": "og:title",
-        "content": "Nike. Just Do It"
+        "content": "Apple"
     },
     {
-        "nes": "",
         "property": "og:description",
-        "content": "Nike delivers innovative products, experiences and services to inspire athletes."
+        "content": "Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV, plus explore accessories, entertainment, and expert device support."
     },
     {
-        "nes": "",
+        "property": "og:url",
+        "content": "https://www.apple.com/"
+    },
+    {
+        "property": "og:locale",
+        "content": "en_US"
+    },
+    {
+        "property": "og:image",
+        "content": "https://www.apple.com/ac/structured-data/images/open_graph_logo.png?202110180743"
+    },
+    {
         "property": "og:type",
         "content": "website"
     },
     {
-        "nes": "",
-        "property": "og:image",
-        "content": "https://c.static-nike.com/a/images/w_1920,c_limit/bzl2wmsfh7kgdkufrrjq/image.jpg"
-    },
-    {
-        "nes": "",
-        "property": "og:url",
-        "content": "https://www.nike.com/"
-    },
-    {
-        "nes": "",
-        "property": "og:locale",
-        "content": "en-US"
-    },
-    {
-        "nes": "",
         "property": "og:site_name",
-        "content": "Nike.com"
+        "content": "Apple"
     },
     {
-        "nes": "",
-        "name": "twitter:card",
-        "content": "summary_large_image"
-    },
-    {
-        "nes": "",
-        "name": "twitter:site",
-        "content": "@nike"
-    },
-    {
-        "nes": "",
-        "name": "twitter:creator",
-        "content": "@nike"
-    },
-    {
-        "nes": "",
-        "name": "twitter:title",
-        "content": "Nike. Just Do It"
-    },
-    {
-        "nes": "",
-        "name": "twitter:description",
-        "content": "Nike delivers innovative products, experiences and services to inspire athletes."
-    },
-    {
-        "nes": "",
-        "name": "twitter:image",
-        "content": "https://c.static-nike.com/a/images/w_1920,c_limit/bzl2wmsfh7kgdkufrrjq/image.jpg"
+        "name": "ac-gn-store-key",
+        "content": "SFX9YPYY9PPXCU9KH"
     }
 ]

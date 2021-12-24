@@ -5,9 +5,10 @@ import { useAppContext } from "../context/AppContext";
 import FacebookPreview from "./FacebookPreview";
 import TwitterPreview from "./TwitterPreview";
 
-function MainPreview() {
+function MainPreview({data}) {
 
     const { first, second, third ,hello} = useAppContext();
+
   return (
     <Wrapper className="main__preview">
       <h1 className="preview">preview</h1>
@@ -20,7 +21,7 @@ function MainPreview() {
             <div className="preview__line"></div>
           </div>
 
-          <GooglePreview first={first} second={second} third={third} />
+          <GooglePreview first={data.title} second={second} third={data.description} />
 
         </article>
 
@@ -31,7 +32,7 @@ function MainPreview() {
             <div className="preview__line"></div>
           </div>
 
-        <FacebookPreview first={first} second={second} third={third} hello={hello} />
+        <FacebookPreview first={data.title} second={second} third={data.description} hello={data.image} />
 
         </article>
 
@@ -42,7 +43,7 @@ function MainPreview() {
             <div className="preview__line"></div>
           </div>
 
-          <TwitterPreview first={first} second={second} third={third} hello={hello} />
+          <TwitterPreview first={data.title} second={second} third={data.description} hello={data.image} />
         </article>
       </main>
     </Wrapper>

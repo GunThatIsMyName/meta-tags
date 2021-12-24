@@ -10,6 +10,12 @@ function Main() {
 
   const [newData, setNewData] = useState();
 
+  const [data,setData]=useState({
+    title:"",
+    description:"",
+    image:"",
+  });
+
   const filterData = () => {
     const one = prac.filter((item) => {
       if (item.name === "description") {
@@ -25,20 +31,44 @@ function Main() {
         return item;
       }
     });
+
+    one.map(item=>{
+      if(item.name==="description"){
+        setData(prev=>{
+          return{...prev,description:item.content}
+        })
+      }
+      if(item.property==="og:description"){
+        setData(prev=>{
+          return{...prev,description:item.content}
+        })
+      }
+      if(item.property==="og:title"){
+        setData(prev=>{
+          return{...prev,title:item.content}
+        })
+      }
+      if(item.property==="og:image"){
+        setData(prev=>{
+          return{...prev,image:item.content}
+        })
+      }
+    })
     setNewData(one);
   };
 
+
+  console.log(data,"data");
   useEffect(() => {
     filterData();
     // eslint-disable-next-line
   }, [prac]);
 
-  console.log(newData, "##");
 
   return (
     <Wrapper>
-      <MetaData newData={newData} />
-      <MainPreview />
+      <MetaData data={data} />
+      <MainPreview data={data} />
     </Wrapper>
   );
 }

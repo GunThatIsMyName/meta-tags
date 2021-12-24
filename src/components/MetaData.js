@@ -2,18 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FaQuestion } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
+import { useEffect } from "react/cjs/react.development";
 
-function MetaData({newData}) {
+function MetaData({data}) {
   const { hello } = useAppContext();
-
   const [cooper,setCooper]=useState({});
-
-
-  // 데이터 받아오기
-  newData.map(item=>{
-  })
-
-
 
   return (
     <Wrapper className="main__meta">
@@ -25,6 +18,7 @@ function MetaData({newData}) {
           maxLength={60}
           rows={2}
           className="meta__text meta__title__text"
+          defaultValue={data.title}
         >
         </textarea>
       </div>
@@ -35,6 +29,7 @@ function MetaData({newData}) {
           maxLength={150}
           rows={5}
           className="meta__text meta__description__text"
+          defaultValue={data.description}
         ></textarea>
       </div>
 
@@ -42,7 +37,7 @@ function MetaData({newData}) {
         <h4 className="meta__title">image</h4>
         <div
           className="meta__image"
-          style={{ background: `url(${hello}) center/cover no-repeat` }}
+          style={{ background: `url(${data.image}) center/cover no-repeat` }}
         >
           {!hello && <FaQuestion />}
         </div>
@@ -76,6 +71,7 @@ const Wrapper = styled.form`
       width: 280px;
       height: 10rem;
       border-radius: 10px;
+      border:1px solid #c7d3d9;
       display: grid;
       place-items: center;
       svg {
