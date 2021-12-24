@@ -15,12 +15,14 @@ function Main() {
 const Wrapper = styled.div`
     min-height:60vh;
     display:flex;
+    background:var(--color-white);
+    border-radius:10px;
+    color:var(--color-grey);
     .main__meta{
         flex-basis:30%;
     }
     .main__preview{
         flex-basis:70%;
-        background-color:teal;
     }
 `;
 

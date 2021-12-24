@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { FaQuestion } from "react-icons/fa";
-function MetaData() {
+import { useAppContext } from "../context/AppContext";
 
-    const hello ="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80"
+
+function MetaData() {
+const {hello}=useAppContext();
+
   return (
     <Wrapper className="main__meta">
       <h1 className="metadata">metadata</h1>
@@ -44,7 +47,7 @@ const Wrapper = styled.form`
     text-transform: uppercase;
     text-align: center;
     font-family: var(--font-roboto);
-    margin-bottom: 2rem;
+    margin: 2rem 0;
   }
   .form__control {
     margin: 2rem;

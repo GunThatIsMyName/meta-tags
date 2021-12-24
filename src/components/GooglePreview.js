@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function CodePreview({ first, second, third }) {
+function GooglePreview({ first, second, third }) {
   return (
     <PreviewWrapper>
       <h1 className="preview__title">{first}</h1>
@@ -34,4 +34,4 @@ const PreviewWrapper = styled.div`
     }
 `;
 
-export default CodePreview;
+export default GooglePreview;
