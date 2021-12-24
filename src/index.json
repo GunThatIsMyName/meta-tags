@@ -1,0 +1,61 @@
+[
+    {
+        "charset": "utf-8"
+    },
+    {
+        "http-equiv": "X-UA-Compatible",
+        "content": "IE=edge"
+    },
+    {
+        "name": "viewport",
+        "content": "width=1190"
+    },
+    {
+        "name": "apple-mobile-web-app-title",
+        "content": "NAVER"
+    },
+    {
+        "name": "robots",
+        "content": "index,nofollow"
+    },
+    {
+        "name": "description",
+        "content": "네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요"
+    },
+    {
+        "property": "og:title",
+        "content": "네이버"
+    },
+    {
+        "property": "og:url",
+        "content": "https://www.naver.com/"
+    },
+    {
+        "property": "og:image",
+        "content": "https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png"
+    },
+    {
+        "property": "og:description",
+        "content": "네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요"
+    },
+    {
+        "name": "twitter:card",
+        "content": "summary"
+    },
+    {
+        "name": "twitter:title",
+        "content": ""
+    },
+    {
+        "name": "twitter:url",
+        "content": "https://www.naver.com/"
+    },
+    {
+        "name": "twitter:image",
+        "content": "https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png"
+    },
+    {
+        "name": "twitter:description",
+        "content": "네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요"
+    }
+]

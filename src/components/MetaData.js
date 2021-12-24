@@ -3,9 +3,8 @@ import styled from "styled-components";
 import { FaQuestion } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
 
-function MetaData() {
+function MetaData({newData}) {
   const { hello } = useAppContext();
-
   return (
     <Wrapper className="main__meta">
       <h1 className="metadata">metadata</h1>
@@ -16,7 +15,8 @@ function MetaData() {
           maxLength={60}
           rows={2}
           className="meta__text meta__title__text"
-        ></textarea>
+        >
+        </textarea>
       </div>
 
       <div className="form__control">

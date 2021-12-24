@@ -12,7 +12,10 @@ import {
 const AppContext = createContext();
 
 const apiEndPoint = "https://api.promptapi.com/meta_tags?url";
-const apiKey = "Ov6c1jTHNb2JEVesfDsZLYwbnFnm4ovP";
+const apiKey = "eM5I1tV0szqGcWcB772yw0EqFl2wvLok";
+
+// eM5I1tV0szqGcWcB772yw0EqFl2wvLok
+// Ov6c1jTHNb2JEVesfDsZLYwbnFnm4ovP
 
 const AppProvider = ({ children }) => {
   const [ state, dispatch ] = useReducer(appReducer, initState);

@@ -19,11 +19,11 @@ function Search({ hero, home }) {
     setUrl(e.target.value);
   };
 
-  useEffect(() => {
-    let timer = setTimeout(removeError, 3000);
-    return () => clearTimeout(timer);
-    // eslint-disable-next-line
-  }, [error]);
+  // useEffect(() => {
+  //   let timer = setTimeout(removeError, 3000);
+  //   return () => clearTimeout(timer);
+  //   // eslint-disable-next-line
+  // }, [error]);
 
   return (
     <Form className="form" onSubmit={handleForm}>
