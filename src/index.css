@@ -63,6 +63,7 @@ body {
   background-color: var(--color-black);
   color: var(--color-white);
   font-family: var(--font-lato);
+  box-sizing: border-box;
 }
 ol, ul, li {
 	list-style: none;

@@ -15,20 +15,19 @@ function FacebookPreview({ first, second, third, hello }) {
 }
 
 const Wrapper = styled.div`
-
-cursor: pointer;
+  cursor: pointer;
   margin: 1rem 2rem;
   width: 400px;
   .preview__img {
     background: url(${(props) => props.hello}) center/cover no-repeat;
-    width: inherit;
+    width: 100%;
     height: 230px;
-    border:1px solid #C7D3D9;
+    border: 1px solid #c7d3d9;
   }
   .preview__info {
-    background: #F2F3F5;
+    background: #f2f3f5;
     padding: 10px 12px;
-    border:1px solid #C7D3D9;
+    border: 1px solid #c7d3d9;
     .preview__title {
       font-size: 12px;
     }
@@ -42,6 +41,11 @@ cursor: pointer;
       white-space: nowrap;
       overflow: hidden;
     }
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    margin: 1rem 0;
   }
 `;
 

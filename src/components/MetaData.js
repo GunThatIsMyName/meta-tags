@@ -3,9 +3,8 @@ import styled from "styled-components";
 import { FaQuestion } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
 
-
 function MetaData() {
-const {hello}=useAppContext();
+  const { hello } = useAppContext();
 
   return (
     <Wrapper className="main__meta">
@@ -31,7 +30,10 @@ const {hello}=useAppContext();
 
       <div className="form__control">
         <h4 className="meta__title">image</h4>
-        <div className="meta__image" style={{background:`url(${hello}) center/cover no-repeat`}} >
+        <div
+          className="meta__image"
+          style={{ background: `url(${hello}) center/cover no-repeat` }}
+        >
           {!hello && <FaQuestion />}
         </div>
       </div>
@@ -41,7 +43,7 @@ const {hello}=useAppContext();
 
 const Wrapper = styled.form`
   flex-basis: 40%;
-
+  border-right: 1px solid #f2f3f5;
   .metadata {
     font-size: 1rem;
     text-transform: uppercase;
@@ -61,13 +63,25 @@ const Wrapper = styled.form`
       resize: none;
     }
     .meta__image {
-      width: 100%;
+      width: 280px;
       height: 10rem;
       border-radius: 10px;
-      display:grid;
-      place-items:center;
-      svg{
-          font-size:1.5rem;
+      display: grid;
+      place-items: center;
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    border-right: none;
+    border-bottom: 1px solid #f2f3f5;
+  }
+  @media screen and (max-width: 480px) {
+    .form__control {
+      .meta__image {
+        width: 100%;
       }
     }
   }
