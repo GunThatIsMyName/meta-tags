@@ -89,3 +89,6 @@ input{
   border: none;
 }
 
+textarea::placeholder{
+  color:#222;
+}

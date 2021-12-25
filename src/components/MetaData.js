@@ -6,7 +6,13 @@ import { useEffect } from "react/cjs/react.development";
 
 function MetaData({data}) {
   const { hello } = useAppContext();
-  const [cooper,setCooper]=useState({});
+
+  console.log(data,"@@@")
+
+  const handleChage=(e)=>{
+    console.log(e.target.name,"name")
+    console.log(e.target.value,"value")
+  }
 
   return (
     <Wrapper className="main__meta">
@@ -18,8 +24,11 @@ function MetaData({data}) {
           maxLength={60}
           rows={2}
           className="meta__text meta__title__text"
-          defaultValue={data.title}
-        >
+          onChange={handleChage}
+          name="title"
+          // value={data.title}
+          placeholder={data.title}
+          >
         </textarea>
       </div>
 
@@ -29,7 +38,10 @@ function MetaData({data}) {
           maxLength={150}
           rows={5}
           className="meta__text meta__description__text"
-          defaultValue={data.description}
+          onChange={handleChage}
+          name="description"
+          placeholder={data.description}
+          // value={data.description}
         ></textarea>
       </div>
 

@@ -6,64 +6,9 @@ import MetaData from "./MetaData";
 import { prac } from "../prac";
 
 function Main() {
-  // const {loading,error}=useAppContext();
+  const {data,loading,error}=useAppContext();
 
-  const [newData, setNewData] = useState();
-
-  const [data,setData]=useState({
-    title:"",
-    description:"",
-    image:"",
-  });
-
-  const filterData = () => {
-    const one = prac.filter((item) => {
-      if (item.name === "description") {
-        return item;
-      }
-      if (item.property === "og:title") {
-        return item;
-      }
-      if (item.property === "og:image") {
-        return item;
-      }
-      if (item.property === "og:description") {
-        return item;
-      }
-    });
-
-    one.map(item=>{
-      if(item.name==="description"){
-        setData(prev=>{
-          return{...prev,description:item.content}
-        })
-      }
-      if(item.property==="og:description"){
-        setData(prev=>{
-          return{...prev,description:item.content}
-        })
-      }
-      if(item.property==="og:title"){
-        setData(prev=>{
-          return{...prev,title:item.content}
-        })
-      }
-      if(item.property==="og:image"){
-        setData(prev=>{
-          return{...prev,image:item.content}
-        })
-      }
-    })
-    setNewData(one);
-  };
-
-
-  console.log(data,"data");
-  useEffect(() => {
-    filterData();
-    // eslint-disable-next-line
-  }, [prac]);
-
+  console.log(data)
 
   return (
     <Wrapper>
@@ -96,3 +41,51 @@ const Wrapper = styled.div`
 `;
 
 export default Main;
+
+
+  // const [data,setData]=useState({
+  //   title:"",
+  //   description:"",
+  //   image:"",
+  // });
+
+  // const filterData = () => {
+  //   const one = prac.filter((item) => {
+  //     if (item.name === "description") {
+  //       return item;
+  //     }
+  //     if (item.property === "og:title") {
+  //       return item;
+  //     }
+  //     if (item.property === "og:image") {
+  //       return item;
+  //     }
+  //     if (item.property === "og:description") {
+  //       return item;
+  //     }
+  //   });
+
+  //   one.map(item=>{
+  //     if(item.name==="description"){
+  //       setData(prev=>{
+  //         return{...prev,description:item.content}
+  //       })
+  //     }
+  //     if(item.property==="og:description"){
+  //       setData(prev=>{
+  //         return{...prev,description:item.content}
+  //       })
+  //     }
+  //     if(item.property==="og:title"){
+  //       setData(prev=>{
+  //         return{...prev,title:item.content}
+  //       })
+  //     }
+  //     if(item.property==="og:image"){
+  //       setData(prev=>{
+  //         return{...prev,image:item.content}
+  //       })
+  //     }
+  //   })
+  //   setNewData(one);
+  // };

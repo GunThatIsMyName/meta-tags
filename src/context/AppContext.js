@@ -32,8 +32,9 @@ const AppProvider = ({ children }) => {
     dispatch({ type: fetchStart });
     try {
       const response = await fetch(url);
-      const {meta_tags:apiData} = await response.json();
-      if(apiData.length<10){
+      const {meta_tags,title,host:{domain}} = await response.json();
+      const apiData = {meta_tags,title,domain}
+      if(meta_tags.length<3){
         console.log("samll")
         throw new Error("THIS IS ERROR 😀 💥");
       }

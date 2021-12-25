@@ -21,7 +21,7 @@ function MainPreview({data}) {
             <div className="preview__line"></div>
           </div>
 
-          <GooglePreview first={data.title} second={second} third={data.description} />
+          <GooglePreview first={data.title} second={data.domain} third={data.description} />
 
         </article>
 
@@ -32,7 +32,7 @@ function MainPreview({data}) {
             <div className="preview__line"></div>
           </div>
 
-        <FacebookPreview first={data.title} second={second} third={data.description} hello={data.image} />
+        <FacebookPreview first={data.title} second={data.domain} third={data.description} hello={data.image} />
 
         </article>
 
@@ -43,7 +43,7 @@ function MainPreview({data}) {
             <div className="preview__line"></div>
           </div>
 
-          <TwitterPreview first={data.title} second={second} third={data.description} hello={data.image} />
+          <TwitterPreview first={data.title} second={data.domain} third={data.description} hello={data.image} />
         </article>
       </main>
     </Wrapper>
