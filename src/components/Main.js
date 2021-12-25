@@ -8,8 +8,6 @@ import { prac } from "../prac";
 function Main() {
   const {data,loading,error}=useAppContext();
 
-  console.log(data)
-
   return (
     <Wrapper>
       <MetaData data={data} />

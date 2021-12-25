@@ -7,6 +7,7 @@ import {
   fetchError,
   fetchFinish,
   errorDisappear,
+  editPreview,
 } from "../reducer/AppReducer";
 
 const AppContext = createContext();
@@ -20,14 +21,6 @@ const apiKey = "eM5I1tV0szqGcWcB772yw0EqFl2wvLok";
 const AppProvider = ({ children }) => {
   const [ state, dispatch ] = useReducer(appReducer, initState);
 
-  const [first, setFirst] = useState("This is Title of the website");
-  const [second, setSecond] = useState("https://junsjourney.site");
-  const [third, setThird] = useState(
-    "descript of this website / awesome in one lineescript of this website / awesome in one lineescript of this website / awesome in one lineescript of this website / awesome in one line"
-  );
-  const hello =
-    "https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80";
-
   const fetchData = async (url) => {
     dispatch({ type: fetchStart });
     try {
@@ -35,7 +28,6 @@ const AppProvider = ({ children }) => {
       const {meta_tags,title,host:{domain}} = await response.json();
       const apiData = {meta_tags,title,domain}
       if(meta_tags.length<3){
-        console.log("samll")
         throw new Error("THIS IS ERROR 😀 💥");
       }
       dispatch({ type: fetchLoading, payload: apiData });
@@ -54,8 +46,12 @@ const AppProvider = ({ children }) => {
     dispatch({ type: errorDisappear });
   }
 
+  const editMeta = (name,value)=>{
+    dispatch({type:editPreview,payload:{name,value}})
+  }
+
   return (
-    <AppContext.Provider value={{ ...state,removeError,first, second, third, hello, handleSubmit }}>
+    <AppContext.Provider value={{ ...state,removeError,editMeta ,handleSubmit }}>
       {children}
     </AppContext.Provider>
   );

@@ -7,6 +7,7 @@ export const fetchError = "FetchError";
 export const fetchFinish = "FetchFinish";
 
 export const errorDisappear ="errorDisappear";
+export const editPreview ="EditPreview";
 
 
 export const initState = {
@@ -59,6 +60,9 @@ export const appReducer=(state,action)=>{
         case fetchFinish:
             return{...state,loading:false}
 
+        case editPreview:
+            const {name,value}=action.payload;
+        return{...state,data:{...state.data,[name]:value}}
         default:
             return console.log("ERROR@@@");
     }

@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FaQuestion } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
-import { useEffect } from "react/cjs/react.development";
 
 function MetaData({data}) {
-  const { hello } = useAppContext();
-
-  console.log(data,"@@@")
+  const { editMeta} = useAppContext();
 
   const handleChage=(e)=>{
-    console.log(e.target.name,"name")
-    console.log(e.target.value,"value")
+    const {name,value}=e.target;
+    editMeta(name,value);
+  }
+
+  const handleClick=(e)=>{
+    e.preventDefault();
+    console.log(data)
   }
 
   return (
@@ -51,8 +53,14 @@ function MetaData({data}) {
           className="meta__image"
           style={{ background: `url(${data.image}) center/cover no-repeat` }}
         >
-          {!hello && <FaQuestion />}
+          {!data.image && <FaQuestion />}
         </div>
+      </div>
+
+      <div className="main__generate">
+        <button className="generator" onClick={handleClick}>
+          Generate Meta tags
+        </button>
       </div>
     </Wrapper>
   );
@@ -89,6 +97,17 @@ const Wrapper = styled.form`
       svg {
         font-size: 1.5rem;
       }
+    }
+  }
+  .main__generate{
+    text-align:center;
+    margin-bottom:2rem;
+    .generator{
+      background-color:var(--color-yellow);
+      color:var(--color-black);
+      padding:8px;
+      font-size:1.2rem;
+      border-radius:5px;
     }
   }
 
