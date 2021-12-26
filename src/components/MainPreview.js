@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import GooglePreview from "./GooglePreview"
-import { useAppContext } from "../context/AppContext";
-import FacebookPreview from "./FacebookPreview";
-import TwitterPreview from "./TwitterPreview";
+import GooglePreview from "./preview/GooglePreview"
+import FacebookPreview from "./preview/FacebookPreview";
+import TwitterPreview from "./preview/TwitterPreview";
 
 function MainPreview({data}) {
 
-    const { first, second, third ,hello} = useAppContext();
-
+  const {title,domain,description,image}=data;
   return (
     <Wrapper className="main__preview">
       <h1 className="preview">preview</h1>
@@ -20,8 +18,7 @@ function MainPreview({data}) {
             <h1 className="preview__title">google</h1>
             <div className="preview__line"></div>
           </div>
-
-          <GooglePreview first={data.title} second={data.domain} third={data.description} />
+          <GooglePreview title={title} domain={domain} description={description} />
 
         </article>
 
@@ -32,7 +29,7 @@ function MainPreview({data}) {
             <div className="preview__line"></div>
           </div>
 
-        <FacebookPreview first={data.title} second={data.domain} third={data.description} hello={data.image} />
+        <FacebookPreview title={title} domain={domain} description={description} image={image} />
 
         </article>
 
@@ -42,8 +39,7 @@ function MainPreview({data}) {
             <h1 className="preview__title">twitter</h1>
             <div className="preview__line"></div>
           </div>
-
-          <TwitterPreview first={data.title} second={data.domain} third={data.description} hello={data.image} />
+          <TwitterPreview title={title} domain={domain} description={description} image={image} />
         </article>
       </main>
     </Wrapper>

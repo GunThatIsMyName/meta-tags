@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
 import {
   appReducer,
   fetchStart,
@@ -19,15 +19,19 @@ const apiKey = "eM5I1tV0szqGcWcB772yw0EqFl2wvLok";
 // Ov6c1jTHNb2JEVesfDsZLYwbnFnm4ovP
 
 const AppProvider = ({ children }) => {
-  const [ state, dispatch ] = useReducer(appReducer, initState);
+  const [state, dispatch] = useReducer(appReducer, initState);
 
   const fetchData = async (url) => {
     dispatch({ type: fetchStart });
     try {
       const response = await fetch(url);
-      const {meta_tags,title,host:{domain}} = await response.json();
-      const apiData = {meta_tags,title,domain}
-      if(meta_tags.length<3){
+      const {
+        meta_tags,
+        title,
+        host: { domain },
+      } = await response.json();
+      const apiData = { meta_tags, title, domain };
+      if (meta_tags.length < 3) {
         throw new Error("THIS IS ERROR 😀 💥");
       }
       dispatch({ type: fetchLoading, payload: apiData });
@@ -42,16 +46,18 @@ const AppProvider = ({ children }) => {
     fetchData(dataUrl);
   };
 
-  const removeError = ()=>{
+  const removeError = () => {
     dispatch({ type: errorDisappear });
-  }
+  };
 
-  const editMeta = (name,value)=>{
-    dispatch({type:editPreview,payload:{name,value}})
-  }
+  const editMeta = (name, value) => {
+    dispatch({ type: editPreview, payload: { name, value } });
+  };
 
   return (
-    <AppContext.Provider value={{ ...state,removeError,editMeta ,handleSubmit }}>
+    <AppContext.Provider
+      value={{ ...state, removeError, editMeta, handleSubmit }}
+    >
       {children}
     </AppContext.Provider>
   );

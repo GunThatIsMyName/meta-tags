@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useAppContext } from "../context/AppContext";
 import MainPreview from "./MainPreview";
 import MetaData from "./MetaData";
-import { prac } from "../prac";
 
 function Main() {
   const {data,loading,error}=useAppContext();
@@ -11,7 +10,7 @@ function Main() {
   return (
     <Wrapper>
       <MetaData data={data} />
-      <MainPreview data={data} />
+      <MainPreview data={data}/>
     </Wrapper>
   );
 }
@@ -39,51 +38,3 @@ const Wrapper = styled.div`
 `;
 
 export default Main;
-
-
-  // const [data,setData]=useState({
-  //   title:"",
-  //   description:"",
-  //   image:"",
-  // });
-
-  // const filterData = () => {
-  //   const one = prac.filter((item) => {
-  //     if (item.name === "description") {
-  //       return item;
-  //     }
-  //     if (item.property === "og:title") {
-  //       return item;
-  //     }
-  //     if (item.property === "og:image") {
-  //       return item;
-  //     }
-  //     if (item.property === "og:description") {
-  //       return item;
-  //     }
-  //   });
-
-  //   one.map(item=>{
-  //     if(item.name==="description"){
-  //       setData(prev=>{
-  //         return{...prev,description:item.content}
-  //       })
-  //     }
-  //     if(item.property==="og:description"){
-  //       setData(prev=>{
-  //         return{...prev,description:item.content}
-  //       })
-  //     }
-  //     if(item.property==="og:title"){
-  //       setData(prev=>{
-  //         return{...prev,title:item.content}
-  //       })
-  //     }
-  //     if(item.property==="og:image"){
-  //       setData(prev=>{
-  //         return{...prev,image:item.content}
-  //       })
-  //     }
-  //   })
-  //   setNewData(one);
-  // };

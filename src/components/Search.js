@@ -3,8 +3,8 @@ import { FaArrowRight } from "react-icons/fa";
 import styled from "styled-components";
 import { useAppContext } from "../context/AppContext";
 
-function Search({ hero, home }) {
-  const { handleSubmit, error, removeError } = useAppContext();
+function Search() {
+  const { handleSubmit, error } = useAppContext();
   const [url, setUrl] = useState("");
 
   const handleForm = (e) => {
@@ -19,12 +19,6 @@ function Search({ hero, home }) {
     setUrl(e.target.value);
   };
 
-  // useEffect(() => {
-  //   let timer = setTimeout(removeError, 3000);
-  //   return () => clearTimeout(timer);
-  //   // eslint-disable-next-line
-  // }, [error]);
-
   return (
     <Form className="form" onSubmit={handleForm}>
       <div className="form__box">
@@ -38,7 +32,7 @@ function Search({ hero, home }) {
           onChange={handleInput}
           className="form__input"
           value={url}
-          placeholder="type any website : https://junsjourney.site"
+          placeholder="https://www.junsjourney.site"
         />
         <button type="submit" className="form__btn">
           <FaArrowRight />
@@ -46,7 +40,7 @@ function Search({ hero, home }) {
       </div>
 
       <p className="form__hint">
-        Try this one : <strong>https://junsjourney.site</strong>
+        Try these site: <strong>github.com | developer.mozilla.org | react.org | gatsbyjs.com  </strong>
       </p>
     </Form>
   );
@@ -92,6 +86,9 @@ const Form = styled.form`
   }
   .form__hint {
     text-align: center;
+    strong{
+      text-decoration:underline;
+    }
   }
 `;
 

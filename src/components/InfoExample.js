@@ -2,15 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { useAppContext } from "../context/AppContext";
 import CodeExample from "./CodeExample";
-import GooglePreview from "./GooglePreview";
+import GooglePreview from "./preview/GooglePreview";
 
 function InfoExample() {
-  const { first, second, third } = useAppContext();
+  const { data:{title,description,domain}} = useAppContext();
 
   return (
     <InfoWrapper>
-      <CodeExample first={first} third={third} />
-      <GooglePreview first={first} second={second} third={third} />
+      <CodeExample title={title} description={description} />
+      <GooglePreview title={title} domain={domain} description={description} />
     </InfoWrapper>
   );
 }

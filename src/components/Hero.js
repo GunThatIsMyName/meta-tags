@@ -4,8 +4,6 @@ import Info from "./Info";
 import Main from "./Main";
 import Search from "./Search";
 
-
-
 const Hero = () => {
   return (
     <Wrapper>
@@ -17,7 +15,7 @@ const Hero = () => {
         </p>
       </header>
 
-      <Search hero={true} />
+      <Search />
 
       <Main />
 

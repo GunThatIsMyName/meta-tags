@@ -2,22 +2,24 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FaQuestion } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
+import Generator from "./Generator";
 
-function MetaData({data}) {
-  const { editMeta} = useAppContext();
+function MetaData({ data }) {
+  const { editMeta } = useAppContext();
+  const [isPopUp, setPopUp] = useState(false);
+  const handleChage = (e) => {
+    const { name, value } = e.target;
+    editMeta(name, value);
+  };
 
-  const handleChage=(e)=>{
-    const {name,value}=e.target;
-    editMeta(name,value);
-  }
-
-  const handleClick=(e)=>{
+  const handleClick = (e) => {
     e.preventDefault();
-    console.log(data)
-  }
+    setPopUp(true);
+  };
 
   return (
     <Wrapper className="main__meta">
+      {isPopUp && <Generator data={data} setPopUp={setPopUp} />}
       <h1 className="metadata">metadata</h1>
 
       <div className="form__control">
@@ -30,8 +32,7 @@ function MetaData({data}) {
           name="title"
           // value={data.title}
           placeholder={data.title}
-          >
-        </textarea>
+        ></textarea>
       </div>
 
       <div className="form__control">
@@ -91,7 +92,7 @@ const Wrapper = styled.form`
       width: 280px;
       height: 10rem;
       border-radius: 10px;
-      border:1px solid #c7d3d9;
+      border: 1px solid #c7d3d9;
       display: grid;
       place-items: center;
       svg {
@@ -99,15 +100,15 @@ const Wrapper = styled.form`
       }
     }
   }
-  .main__generate{
-    text-align:center;
-    margin-bottom:2rem;
-    .generator{
-      background-color:var(--color-yellow);
-      color:var(--color-black);
-      padding:8px;
-      font-size:1.2rem;
-      border-radius:5px;
+  .main__generate {
+    text-align: center;
+    margin-bottom: 2rem;
+    .generator {
+      background-color: var(--color-yellow);
+      color: var(--color-black);
+      padding: 8px;
+      font-size: 1.2rem;
+      border-radius: 5px;
     }
   }
 

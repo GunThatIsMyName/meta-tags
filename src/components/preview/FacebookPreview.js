@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-function FacebookPreview({ first, second, third, hello }) {
+function FacebookPreview({ title, description, domain, image }) {
   return (
-    <Wrapper hello={hello}>
+    <Wrapper image={image}>
       <div className="preview__img"></div>
       <div className="preview__info">
-        <h1 className="preview__title">{first}</h1>
-        <h1 className="preview__subtitle">{second}</h1>
-        <h1 className="third">{third}</h1>
+        <h1 className="description">{domain}</h1>
+        <h1 className="preview__subtitle">{description}</h1>
+        <h1 className="preview__title">{title}</h1>
       </div>
     </Wrapper>
   );
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   margin: 1rem 2rem;
   width: 400px;
   .preview__img {
-    background: url(${(props) => props.hello}) center/cover no-repeat;
+    background: url(${(props) => props.image}) center/cover no-repeat;
     width: 100%;
     height: 230px;
     border: 1px solid #c7d3d9;
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
       margin: 5px 0;
       font-family: var(--font-roboto);
     }
-    .third {
+    .description {
       font-size: 14px;
       text-overflow: ellipsis;
       white-space: nowrap;
