@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { MainPreview, MetaData } from ".";
 import { useAppContext } from "../context/AppContext";
-import MainPreview from "./MainPreview";
-import MetaData from "./MetaData";
 
 function Main() {
-  const {data,loading,error}=useAppContext();
+  const {data}=useAppContext();
 
   return (
     <Wrapper>

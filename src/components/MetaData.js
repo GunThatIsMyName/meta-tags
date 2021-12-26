@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FaQuestion } from "react-icons/fa";
 import { useAppContext } from "../context/AppContext";
-import Generator from "./Generator";
+import { Generator } from ".";
 
 function MetaData({ data }) {
   const { editMeta } = useAppContext();
@@ -69,7 +69,7 @@ function MetaData({ data }) {
 
 const Wrapper = styled.form`
   flex-basis: 40%;
-  border-right: 1px solid #f2f3f5;
+  border-right: 1px solid var(--color-lightwhite);
   .metadata {
     font-size: 1rem;
     text-transform: uppercase;
@@ -92,7 +92,7 @@ const Wrapper = styled.form`
       width: 280px;
       height: 10rem;
       border-radius: 10px;
-      border: 1px solid #c7d3d9;
+      border: 1px solid var(--color-border);
       display: grid;
       place-items: center;
       svg {
@@ -114,7 +114,7 @@ const Wrapper = styled.form`
 
   @media screen and (max-width: 991px) {
     border-right: none;
-    border-bottom: 1px solid #f2f3f5;
+    border-bottom: 1px solid var(--color-lightwhite);
   }
   @media screen and (max-width: 480px) {
     .form__control {

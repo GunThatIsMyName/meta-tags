@@ -17,12 +17,12 @@ function CodeArr({ content, arr, arrType }) {
 
 const Code = styled.code`
   .code__arr {
-    color: #0048ab;
+    color: var(--color-code);
     margin-left: 4px;
   }
   .code__tag {
     font-size: 1.2rem;
-    color: #0048ab;
+    color: var(--color-code);
     font-family: var(--font-roboto);
     margin: 0 4px;
   }

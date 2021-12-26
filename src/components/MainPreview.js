@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import GooglePreview from "./preview/GooglePreview"
-import FacebookPreview from "./preview/FacebookPreview";
-import TwitterPreview from "./preview/TwitterPreview";
+import { FacebookPreview, GooglePreview, TwitterPreview } from "./preview";
 
 function MainPreview({data}) {
 

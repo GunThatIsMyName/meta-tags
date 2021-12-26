@@ -6,7 +6,7 @@ function CodeComments({ content }) {
 }
 
 const Comments = styled.code`
-  color: #708090;
+  color: var(--color-comments);
 `;
 
 export default CodeComments;

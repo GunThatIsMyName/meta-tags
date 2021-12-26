@@ -1,28 +1,27 @@
 import { createContext, useContext, useReducer } from "react";
+import { appReducer } from "../reducer/AppReducer";
 import {
-  appReducer,
-  fetchStart,
-  fetchLoading,
+  AS_editPreview,
+  AS_fetchError,
+  AS_fetchFinish,
+  AS_fetchLoading,
+  AS_fetchStart,
   initState,
-  fetchError,
-  fetchFinish,
-  errorDisappear,
-  editPreview,
-} from "../reducer/AppReducer";
+} from "../reducer/AppState";
 
 const AppContext = createContext();
 
 const apiEndPoint = "https://api.promptapi.com/meta_tags?url";
 const apiKey = "eM5I1tV0szqGcWcB772yw0EqFl2wvLok";
 
-// eM5I1tV0szqGcWcB772yw0EqFl2wvLok
-// Ov6c1jTHNb2JEVesfDsZLYwbnFnm4ovP
+// apikey1 === eM5I1tV0szqGcWcB772yw0EqFl2wvLok
+// apikey2 === Ov6c1jTHNb2JEVesfDsZLYwbnFnm4ovP
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initState);
 
   const fetchData = async (url) => {
-    dispatch({ type: fetchStart });
+    dispatch({ type: AS_fetchStart });
     try {
       const response = await fetch(url);
       const {
@@ -34,11 +33,11 @@ const AppProvider = ({ children }) => {
       if (meta_tags.length < 3) {
         throw new Error("THIS IS ERROR 😀 💥");
       }
-      dispatch({ type: fetchLoading, payload: apiData });
+      dispatch({ type: AS_fetchLoading, payload: apiData });
     } catch (error) {
-      dispatch({ type: fetchError });
+      dispatch({ type: AS_fetchError });
     }
-    dispatch({ type: fetchFinish });
+    dispatch({ type: AS_fetchFinish });
   };
 
   const handleSubmit = (url) => {
@@ -46,18 +45,12 @@ const AppProvider = ({ children }) => {
     fetchData(dataUrl);
   };
 
-  const removeError = () => {
-    dispatch({ type: errorDisappear });
-  };
-
   const editMeta = (name, value) => {
-    dispatch({ type: editPreview, payload: { name, value } });
+    dispatch({ type: AS_editPreview, payload: { name, value } });
   };
 
   return (
-    <AppContext.Provider
-      value={{ ...state, removeError, editMeta, handleSubmit }}
-    >
+    <AppContext.Provider value={{ ...state, editMeta, handleSubmit }}>
       {children}
     </AppContext.Provider>
   );

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { CodeExample } from ".";
 import { useAppContext } from "../context/AppContext";
-import CodeExample from "./CodeExample";
-import GooglePreview from "./preview/GooglePreview";
+import { GooglePreview } from "./preview";
 
 function InfoExample() {
   const { data:{title,description,domain}} = useAppContext();

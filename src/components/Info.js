@@ -1,8 +1,8 @@
 import React from "react";
-import InfoExample from "./InfoExample";
+import { InfoExample } from ".";
+import styled from "styled-components";
 
 import bfImage from "../image/bf.png";
-import styled from "styled-components";
 
 function Info() {
   return (

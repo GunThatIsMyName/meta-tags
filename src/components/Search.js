@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import styled from "styled-components";
 import { useAppContext } from "../context/AppContext";
+import styled from "styled-components";
 
 function Search() {
   const { handleSubmit, error } = useAppContext();
@@ -22,11 +22,13 @@ function Search() {
   return (
     <Form className="form" onSubmit={handleForm}>
       <div className="form__box">
+
         {error && (
           <h1 className="form__error">
-            please check your site address again 🤙🏼{" "}
+            please check your site address again 🤙🏼
           </h1>
         )}
+
         <input
           type="text"
           onChange={handleInput}
@@ -40,9 +42,9 @@ function Search() {
       </div>
 
       <p className="form__hint">
-        recommendation sites:{" "}
+        recommendation sites:
         <strong>
-          github.com | developer.mozilla.org | reactjs.org | gatsbyjs.com{" "}
+          github.com | developer.mozilla.org | reactjs.org | gatsbyjs.com
         </strong>
       </p>
     </Form>
@@ -59,7 +61,7 @@ const Form = styled.form`
     margin-bottom: 1rem;
     .form__error {
       position: absolute;
-      background: red;
+      background: var(--color-pink);
       bottom: -45px;
       padding: 10px;
     }

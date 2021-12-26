@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
-import CodeTerm from "./codeline/CodeTerm";
-import CodeComments from "./codeline/CodeComments";
-import CodeArr from "./codeline/CodeArr";
+import { CodeArr, CodeComments, CodeTerm } from "./codeline";
 
 function Generator({ data, setPopUp }) {
   const closePopup = (e) => {

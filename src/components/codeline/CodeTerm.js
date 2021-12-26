@@ -15,7 +15,7 @@ function CodeTerm({child }) {
 const CodeLine = styled.code`
   font-size: 1.2rem;
   .code__tag {
-    color: #0048ab;
+    color: var(--color-code);
     font-family: var(--font-roboto);
     margin: 0 4px;
   }
