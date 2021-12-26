@@ -9,6 +9,7 @@ function InfoExample() {
 
   return (
     <InfoWrapper>
+      <h1 className="title">Example</h1>
       <CodeExample title={title} description={description} />
       <GooglePreview title={title} domain={domain} description={description} />
     </InfoWrapper>
@@ -18,11 +19,16 @@ function InfoExample() {
 const InfoWrapper = styled.article`
   background-color: var(--color-white);
   width: 1000px;
-  margin: auto;
+  margin: 2rem auto;
   padding: 1rem;
   border: 2px solid var(--color-black);
   border-radius: 3px;
 
+  .title{
+    color:var(--color-black);
+    font-size:1.4rem;
+    margin-bottom:10px;
+  }
   @media screen and (max-width: 1024px) {
     width: 90%;
   }

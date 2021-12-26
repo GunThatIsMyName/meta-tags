@@ -32,7 +32,7 @@ function Search() {
           onChange={handleInput}
           className="form__input"
           value={url}
-          placeholder="https://www.junsjourney.site"
+          placeholder="search any website"
         />
         <button type="submit" className="form__btn">
           <FaArrowRight />
@@ -40,7 +40,10 @@ function Search() {
       </div>
 
       <p className="form__hint">
-        Try these site: <strong>github.com | developer.mozilla.org | react.org | gatsbyjs.com  </strong>
+        recommendation sites:{" "}
+        <strong>
+          github.com | developer.mozilla.org | reactjs.org | gatsbyjs.com{" "}
+        </strong>
       </p>
     </Form>
   );
@@ -86,8 +89,8 @@ const Form = styled.form`
   }
   .form__hint {
     text-align: center;
-    strong{
-      text-decoration:underline;
+    strong {
+      text-decoration: underline;
     }
   }
 `;

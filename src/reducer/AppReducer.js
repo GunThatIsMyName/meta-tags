@@ -12,8 +12,8 @@ export const editPreview ="EditPreview";
 
 export const initState = {
     data:{
-        title:"Junhyun's Imagine",
-        description:"실패는 성장을 위한 배경지식이다. 한번더 부딫혀라 ",
+        title:"junhyun's journey ",
+        description:"할 수 있다는 믿음을 가지면 처음에는 그런 능력이 없을지라도 결국에는 할 수 있는 능력을 확실히 갖게 된다. ",
         domain:"junsjourney.site",
         image:mySite,
     },
