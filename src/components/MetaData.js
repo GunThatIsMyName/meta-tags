@@ -109,6 +109,11 @@ const Wrapper = styled.form`
       padding: 8px;
       font-size: 1.2rem;
       border-radius: 5px;
+      transition:0.3s linear;
+      &:hover{
+        color: var(--color-yellow);
+        background-color: var(--color-black);
+      }
     }
   }
 
