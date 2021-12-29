@@ -8,7 +8,7 @@ function Info() {
   return (
     <Wrapper>
       <article className="info__article">
-        <h1 className="info__title">Why are meta tags?</h1>
+        <h1 className="info__title">What are meta tags?</h1>
         <div className="info__box">
           <p className="info__lead">
             Meta tags are areas in HTML code that contain information about a
